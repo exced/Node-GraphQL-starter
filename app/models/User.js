@@ -16,9 +16,9 @@ export default class User {
 
     findOneById = (id) => this.loader.load(id)
 
-    all = ({ lastCreatedAt = 0, offset = 0, limit = 10 }) => (
+    all = ({ offset = 0, limit = 10 }) => (
         this.collection
-            .find({ createdAt: { $gt: lastCreatedAt } })
+            .find()
             .sort({ createdAt: 1 })
             .skip(offset)
             .limit(limit)
@@ -26,7 +26,6 @@ export default class User {
     )
 
     insert = async (doc) => {
-        // We don't want to store passwords plaintext!
         const { password, ...rest } = doc
         const hash = await bcrypt.hash(password, SALT_ROUNDS)
         const docToInsert = {

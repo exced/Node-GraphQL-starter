@@ -3,8 +3,8 @@ const resolver = {
         id: (user) => user._id,
     },
     Query: {
-        users: (root, { lastCreatedAt, offset, limit }, { User }) => (
-            User.all({ lastCreatedAt, offset, limit })
+        users: (root, { offset, limit }, { User }) => (
+            User.all({ offset, limit })
         ),
         user: (root, { id }, { User }) => User.findOneById(id),
     },
