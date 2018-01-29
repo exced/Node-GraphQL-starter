@@ -1,25 +1,25 @@
 type User {
-  id: ObjectID!
-  username: String
-  roles: [UserRole]!
-  createdAt: Float!
-  updatedAt: Float!
+    id: ObjectID!
+    username: String
+    roles: [UserRole]!
+    createdAt: Float!
+    updatedAt: Float!
 }
 
 type Query {
-  users(offset: Int, limit: Int): [User]
-  user(id: ObjectID!): User
+    users(offset: Int, limit: Int): [User]
+    user(id: ObjectID!): User
 }
 
 input UserInput {
-  username: String!
-  password: String!
+    username: String!
+    password: String!
 }
 
 type Mutation {
-  updateUser(id: ObjectID!, input: UserInput): User
+    updateUser(id: ObjectID!, input: UserInput): User
 }
 
 type Subscription {
-  userUpdated: User
+    userUpdated: User
 }
