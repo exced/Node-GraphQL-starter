@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node index.js"
+    "start": "nodemon --exec babel-node index.js",
+    "lint": "eslint --ext .js app",
+    "lint:fix": "eslint --ext .js app --fix"
   },
   "author": "Thomas Barras",
   "dependencies": {
@@ -33,5 +35,9 @@
     "passport": "^0.4.0",
     "passport-jwt": "^3.0.1",
     "subscriptions-transport-ws": "^0.9.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.1",
+    "eslint": "^3.19.0"
   }
 }
