@@ -1,3 +1,3 @@
-export const ROLE_USER = 'User'
-export const ROLE_ADMIN = 'Admin'
-export const ROLE_SUPERADMIN = 'SuperAdmin'
+export const ROLE_USER = 'ROLE_USER'
+export const ROLE_ADMIN = 'ROLE_ADMIN'
+export const ROLE_SUPER_ADMIN = 'ROLE_SUPER_ADMIN'

@@ -9,6 +9,7 @@
   },
   "author": "Thomas Barras",
   "dependencies": {
+    "apollo-errors": "^1.5.1",
     "apollo-server-express": "^1.1.2",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.0",

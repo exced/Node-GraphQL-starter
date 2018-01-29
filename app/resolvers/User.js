@@ -1,29 +1,17 @@
 const resolver = {
     User: {
-        id: (user) => user._id,
+      id: (user) => user._id,
     },
     Query: {
-        users: (root, { offset, limit }, { User }) => (
-            User.all({ offset, limit })
-        ),
-        user: (root, { id }, { User }) => User.findOneById(id),
+      users: (root, { offset, limit }, { User }) => User.all({ offset, limit }),
+      user: (root, { id }, { User }) => User.findOneById(id),
     },
     Mutation: {
-        createUser: async (root, { input }, { User }) => {
-            const id = await User.insert(input)
-            return User.findOneById(id)
-        },
-        updateUser: async (root, { id, input }, { User }) => {
-            await User.updateById(id, input)
-            return User.findOneById(id)
-        },
-        removeUser: (root, { id }, { User }) => User.removeById(id),
+      updateUser: (root, { id, input }, { User }) => User.updateById(id, input),
     },
     Subscription: {
-        userCreated: user => user,
-        userUpdated: user => user,
-        userRemoved: id => id,
+      userUpdated: user => user,
     },
-}
-
-export default resolver
+  }
+  
+  export default resolver
